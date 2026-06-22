@@ -1,0 +1,449 @@
+/* ============================================
+   VARIÁVEIS CSS - CORES, TIPOGRAFIA, ESPAÇAMENTOS
+   ============================================ */
+
+:root {
+    /* CORES PRINCIPAIS */
+    --cor-primaria: #0f172a;
+    --cor-secundaria: #22c55e;
+    --cor-whatsapp: #25D366;
+    --cor-bg: #f4f6f9;
+    --cor-texto: #333;
+    --cor-branco: #fff;
+    --cor-border: #ddd;
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+    
+    /* TIPOGRAFIA */
+    --fonte-familia: 'Segoe UI', sans-serif;
+    --tamanho-h1: 3.5rem;
+    --tamanho-h2: 2rem;
+    --tamanho-p: 1.2rem;
+    --tamanho-p-pequeno: 1rem;
+    --peso-normal: 400;
+    --peso-bold: 700;
+    
+    /* ESPAÇAMENTOS */
+    --espacamento-xs: 5px; /* espaçamento extra pequeno para detalhes finos */
+    --espacamento-sm: 10px; /* espaçamento pequeno para elementos próximos */
+    --espacamento-md: 15px; /* espaçamento médio para elementos relacionados */
+    --espacamento-lg: 8px; /* espaçamento grande para seções distintas */
+    --espacamento-xl: 25px; /* espaçamento extra grande para separar seções principais */
+    --espacamento-2xl: 30px; /* espaçamento extra grande para separar seções principais */
+    --espacamento-3xl: 50px; /* espaçamento extra grande para separar seções principais */
+    --espacamento-4xl: 90px; /* espaçamento extra grande para separar seções principais */
+    
+    /* DIMENSÕES */
+    --max-width: 1200px;
+    --width-container: 90%;
+    --border-radius-sm: 8px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 15px;
+    --border-radius-xl: 50px;
+
+      /* ANIMAÇÕES */
+    --duracao-animacao: 0.8s;
+    --escala-hover: 1.05;
+    --elevacao-hover: -8px;
+
+    /* SOMBRAS */
+--sombra-card: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    
+    /* TRANSIÇÕES */
+    --transicao-rapida: 0.3s;
+    --transicao-lenta: 0.8s;
+    
+    /* Z-INDEX */
+    --z-header: 1000;
+}
+
+/* ============================================
+   ESTILOS GLOBAIS - DESKTOP
+   ============================================ */
+
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-familia);
+    background: var(--cor-bg);
+    color: var(--cor-texto);
+}
+
+.container {
+    width: var(--width-container);
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+/* ============================================
+   HEADER / NAVEGAÇÃO
+   ============================================ */
+
+header {
+    background: var(--cor-primaria);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espacamento-lg);
+}
+
+.logo {
+    color: var(--cor-branco);
+    font-size: 1.8rem;
+    font-weight: var(--peso-bold);
+}
+
+.logo span {
+    color: var(--cor-secundaria);
+}
+
+/* Menu de navegação - visível em desktop */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: var(--espacamento-xl);
+}
+
+.menu a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    transition: var(--transicao-rapida);
+}
+
+.menu a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Botão hambúrguer - escondido em desktop */
+.hamburger {
+    display: none;
+}
+
+/* ============================================
+   SEÇÃO HERO / BANNER PRINCIPAL
+   ============================================ */
+
+.hero {
+    min-height: 90vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Imagem de fundo inserida no HTML, posicionada atrás do conteúdo */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    background: var(--cor-secundaria);
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: var(--espacamento-md) var(--espacamento-2xl);
+    border-radius: var(--border-radius-md);
+    transition: var(--transicao-rapida);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: var(--espacamento-md);
+    background: var(--cor-whatsapp);
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: 12px var(--espacamento-lg);
+    border-radius: var(--border-radius-sm);
+}
+
+/* ============================================
+   SEÇÕES E CARDS
+   ============================================ */
+
+.section {
+    padding: var(--espacamento-4xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--tamanho-h2);
+    margin-bottom: var(--espacamento-3xl);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--espacamento-xl);
+}
+
+.card {
+    background: var(--cor-branco);
+    padding: var(--espacamento-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 25px var(--cor-sombra);
+    transition: var(--transicao-rapida);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    margin-bottom: var(--espacamento-sm);
+}
+
+.produto {
+    max-width: 400px;  /*largura máxima para manter a proporção e evitar distorção*/
+    margin: 0 auto;
+}
+
+.produto img {
+    width: 100%;
+    max-width:200px; /*largura máxima para manter a proporção e evitar distorção*/
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+/* ============================================
+   SEÇÃO SOBRE / DIFERENCIAIS
+   ============================================ */
+
+.sobre-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.sobre-content p {
+    margin-bottom: var(--espacamento-xl);
+    line-height: 1.8;
+    color: var(--cor-texto);
+    font-size: 1.1rem;
+}
+
+.sobre-diferenciais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacamento-lg);
+    margin-top: var(--espacamento-2xl);
+}
+
+.item {
+    background: var(--cor-branco);
+    padding: var(--espacamento-xl);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--sombra-card);
+    font-weight: var(--peso-bold);
+    transition: var(--transicao-rapida);
+}
+
+.item:hover {
+    transform: translateY(var(--elevacao-hover))
+               scale(var(--escala-hover));
+}
+
+/* ============================================
+   SEÇÃO MARCAS
+   ============================================ */
+
+.marcas {
+    background: var(--cor-branco);
+}
+
+.marcas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--espacamento-lg);
+}
+
+.marca {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: var(--espacamento-2xl);
+    border-radius: 12px;
+
+  transition:
+        transform var(--transicao-rapida),
+        box-shadow var(--transicao-rapida);
+
+    cursor: pointer;
+}
+
+.marca:hover {
+    transform:
+        translateY(var(--elevacao-hover))
+        scale(var(--escala-hover));
+
+    box-shadow: var(--sombra-card);
+}
+/* ============================================
+   FORMULÁRIO
+   ============================================ */
+
+form {
+    display: flex; /* exibe os elementos do formulário em um layout flexível */
+    flex-direction: column; /* organiza os elementos em coluna */
+    gap: var(--espacamento-md); /* adiciona um espaço entre os elementos do formulário */
+}
+
+label {
+    font-weight: var(--peso-bold); /* torna o texto do rótulo mais destacado */
+    color: var(--cor-primaria); /* cor do rótulo para melhor contraste */
+    margin-bottom: 5px; /* adiciona um pequeno espaço abaixo do rótulo para separar do campo de entrada */
+}
+
+input,
+textarea {
+    padding: var(--espacamento-md); /* adiciona um preenchimento interno para tornar os campos mais confortáveis de usar */
+    border: 1px solid var(--cor-border); /* borda sutil para definir os campos de entrada */
+    border-radius: var(--border-radius-sm); /* bordas arredondadas para um visual mais moderno */
+    font-family: var(--fonte-familia); /* mantém a consistência tipográfica com o restante do site */
+
+    transition:
+    border-color var(--transicao-rapida),/* transição suave para a borda */
+    box-shadow var(--transicao-rapida);/* transição suave para a sombra */
+    transform: var(--transicao-rapida);/* transição suave para transformações */
+
+}
+/* Efeito de foco para campos de entrada - destaca o campo ativo */
+
+input:focus, /* Aplica o mesmo estilo de foco para textarea para manter a consistência visual */
+textarea:focus {
+    outline: none; /* Remove o contorno padrão do navegador para campos de entrada */
+    border-color: var(--cor-secundaria);
+    box-shadow: var(--sombra-card);/* sombra mais intensa para destacar o campo ativo */ 
+    transform: scale(1.02);  /* leve aumento de escala para dar feedback visual */
+}
+
+button {
+    padding: var(--espacamento-md);
+    border: none;
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-weight: var(--peso-bold);
+    transition: var(--transicao-rapida);
+
+    transition:
+        background var(--transicao-rapida),/* transição suave para a cor de fundo */
+        transform var(--transicao-rapida),/* transição suave para transformações */
+        box-shadow var(--transicao-rapida);/* transição suave para transformações e sombras */
+}
+
+button:hover {
+    background: var(--cor-secundaria);
+    transform: translateY(-2px);
+
+    transition:alltranslateY(var(--elevacao-hover)) 
+    scale(var(--escala-hover));/* leve elevação e aumento de escala para dar feedback visual */
+    box-shadow: var(--sombra-card);/* sombra mais intensa para destacar o botão */
+}
+
+button:focus {
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: var(--espacamento-3xl);
+}
+
+/* ============================================
+   ELEMENTOS FLUTUANTES
+   ============================================ */
+
+.whatsapp-float {
+    position: fixed;
+    right: var(--espacamento-lg);
+    bottom: var(--espacamento-lg);
+    background: var(--cor-whatsapp);
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: var(--espacamento-md) var(--espacamento-lg);
+    border-radius: var(--border-radius-xl);
+    font-weight: var(--peso-bold);
+}
+
+/* ============================================
+   ANIMAÇÕES / EFEITOS
+   ============================================ */
+
+/* Exemplo de animação simples para elementos que aparecem ao rolar a página */
+
+.reveal { /* Elementos começam invisíveis e deslocados para baixo */
+    opacity: 0;/* Inicia invisível */
+    transform: translateY(40px); /* Inicia deslocado para baixo */
+    transition: var(--transicao-lenta); /* Transição suave para a animação */
+}
+
+/* Quando a classe .active é adicionada, o elemento se torna visível e volta à posição original */
+
+.reveal.active { /* Elementos ficam visíveis e voltam à posição original */
+    opacity: 1; /* Torna o elemento visível */
+    transform: translateY(0); /* Volta à posição original */
+}

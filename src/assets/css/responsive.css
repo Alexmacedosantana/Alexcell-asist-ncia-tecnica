@@ -1,0 +1,62 @@
+/* ============================================
+   MEDIA QUERIES - RESPONSIVO MOBILE (máx 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+    
+    /* ---- NAVEGAÇÃO / HEADER ---- */
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: var(--espacamento-sm) 0;
+        width: 100%;
+    }
+
+    /* Botão hambúrguer - visível em mobile */
+    .hamburger {
+        display: block;
+        background: transparent;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    /* Menu de navegação - escondido por padrão, mostra quando .open */
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: var(--espacamento-sm);
+    }
+
+    .nav-menu.open {
+        display: flex;
+        gap: 0.5rem;
+        padding-top: 1rem;
+    }
+
+    /* Impede scroll quando menu está aberto */
+    .no-scroll {
+        overflow: hidden;
+    }
+
+    /* ---- SEÇÃO HERO ---- */
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: var(--tamanho-p-pequeno);
+    }
+}
