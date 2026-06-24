@@ -43,12 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const endereco = document.getElementById("endereco").value;
       const mensagem = document.getElementById("mensagem").value;
 
-      const texto = ` Olá! Nome: ${nome}
+      const texto = ` Olá como posso ajudar? Nome: ${nome}
 	  E-mail: ${email}
      Endereço: ${endereco}
      Mensagem: ${mensagem}`;
 
-      const numero = "5568999788376";
+      const numero = "5568000000000";
 
       window.open(
         `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`,
