@@ -391,9 +391,6 @@ button {
 button:hover {
     background: var(--cor-secundaria);
     transform: translateY(-2px);
-
-    transition:alltranslateY(var(--elevacao-hover)) 
-    scale(var(--escala-hover));/* leve elevação e aumento de escala para dar feedback visual */
     box-shadow: var(--sombra-card);/* sombra mais intensa para destacar o botão */
 }
 
